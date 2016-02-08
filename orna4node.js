@@ -1,6 +1,6 @@
 /*
  *Orna for Node
- *version: 0.3.0
+ *version: 0.4.0
  *ornaorg.github.io
  */
 var fs = require('fs');
@@ -26,474 +26,475 @@ function createatom() {
                 if (isclass == -1) {
                     console.log(isclass);
                     if (val[1] !== undefined & val[2] === undefined) {
+                        var dblval = val[1].replace(/per/, '%');
                         if (val[0] == "bg") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{background:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{background:' + dblval + ';}\n');
                         } else if (val[0] == "bgi") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{background-image:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{background-image:' + dblval + ';}\n');
                         } else if (val[0] == "bgc") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{background-color:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{background-color:' + dblval + ';}\n');
                         } else if (val[0] == "w") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{width:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{width:' + dblval + ';}\n');
                         } else if (val[0] == "h") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{height:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{height:' + dblval + ';}\n');
                         } else if (val[0] == "p") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{padding:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{padding:' + dblval + ';}\n');
                         } else if (val[0] == "pl") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{padding-left:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{padding-left:' + dblval + ';}\n');
                         } else if (val[0] == "pr") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{padding-right:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{padding-right:' + dblval + ';}\n');
                         } else if (val[0] == "pt") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{padding-top:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{padding-top:' + dblval + ';}\n');
                         } else if (val[0] == "pb") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{padding-bottom:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{padding-bottom:' + dblval + ';}\n');
                         } else if (val[0] == "m") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{margin:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{margin:' + dblval + ';}\n');
                         } else if (val[0] == "ml") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{margin-left:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{margin-left:' + dblval + ';}\n');
                         } else if (val[0] == "mr") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{margin-right:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{margin-right:' + dblval + ';}\n');
                         } else if (val[0] == "mt") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{margin-top:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{margin-top:' + dblval + ';}\n');
                         } else if (val[0] == "mb") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{margin-bottom:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{margin-bottom:' + dblval + ';}\n');
                         } else if (val[0] == "b") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{border:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{border:' + dblval + ';}\n');
                         } else if (val[0] == "bl") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{border-left:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{border-left:' + dblval + ';}\n');
                         } else if (val[0] == "br") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{border-right:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{border-right:' + dblval + ';}\n');
                         } else if (val[0] == "bt") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{border-top:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{border-top:' + dblval + ';}\n');
                         } else if (val[0] == "bb") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{border-bottom:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{border-bottom:' + dblval + ';}\n');
                         } else if (val[0] == "c") {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{color:' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{color:' + dblval + ';}\n');
                         } else {
-                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{' + val[0] + ':' + val[1] + ';}\n');
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{' + val[0] + ':' + dblval + ';}\n');
                         }
                     } else if (val[1] !== undefined & val[2] !== undefined) {
-                        if (val[2] == "h"||val[2]=="hover") {
+                        if (val[2] == "h" || val[2] == "hover") {
                             //hover
                             if (val[0] == "bg") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{background:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{background:' + dblval + ';}\n');
                             } else if (val[0] == "bgi") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{background-image:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{background-image:' + dblval + ';}\n');
                             } else if (val[0] == "bgc") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{background-color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{background-color:' + dblval + ';}\n');
                             } else if (val[0] == "w") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{width:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{width:' + dblval + ';}\n');
                             } else if (val[0] == "h") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{height:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{height:' + dblval + ';}\n');
                             } else if (val[0] == "p") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{padding:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{padding:' + dblval + ';}\n');
                             } else if (val[0] == "pl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{padding-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{padding-left:' + dblval + ';}\n');
                             } else if (val[0] == "pr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{padding-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{padding-right:' + dblval + ';}\n');
                             } else if (val[0] == "pt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{padding-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{padding-top:' + dblval + ';}\n');
                             } else if (val[0] == "pb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{padding-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{padding-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "m") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{margin:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{margin:' + dblval + ';}\n');
                             } else if (val[0] == "ml") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{margin-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{margin-left:' + dblval + ';}\n');
                             } else if (val[0] == "mr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{margin-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{margin-right:' + dblval + ';}\n');
                             } else if (val[0] == "mt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{margin-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{margin-top:' + dblval + ';}\n');
                             } else if (val[0] == "mb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{margin-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{margin-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "b") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{border:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{border:' + dblval + ';}\n');
                             } else if (val[0] == "bl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{border-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{border-left:' + dblval + ';}\n');
                             } else if (val[0] == "br") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{border-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{border-right:' + dblval + ';}\n');
                             } else if (val[0] == "bt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{border-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{border-top:' + dblval + ';}\n');
                             } else if (val[0] == "bb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{border-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{border-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "c") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{color:' + dblval + ';}\n');
                             } else {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{' + val[0] + ':' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "f"||val[2]=="focus") {
+                        } else if (val[2] == "f" || val[2] == "focus") {
                             //focus
                             if (val[0] == "bg") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{background:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{background:' + dblval + ';}\n');
                             } else if (val[0] == "bgi") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{background-image:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{background-image:' + dblval + ';}\n');
                             } else if (val[0] == "bgc") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{background-color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{background-color:' + dblval + ';}\n');
                             } else if (val[0] == "w") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{width:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{width:' + dblval + ';}\n');
                             } else if (val[0] == "h") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{height:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{height:' + dblval + ';}\n');
                             } else if (val[0] == "p") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{padding:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{padding:' + dblval + ';}\n');
                             } else if (val[0] == "pl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{padding-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{padding-left:' + dblval + ';}\n');
                             } else if (val[0] == "pr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{padding-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{padding-right:' + dblval + ';}\n');
                             } else if (val[0] == "pt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{padding-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{padding-top:' + dblval + ';}\n');
                             } else if (val[0] == "pb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{padding-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{padding-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "m") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{margin:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{margin:' + dblval + ';}\n');
                             } else if (val[0] == "ml") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{margin-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{margin-left:' + dblval + ';}\n');
                             } else if (val[0] == "mr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{margin-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{margin-right:' + dblval + ';}\n');
                             } else if (val[0] == "mt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{margin-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{margin-top:' + dblval + ';}\n');
                             } else if (val[0] == "mb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{margin-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{margin-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "b") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{border:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{border:' + dblval + ';}\n');
                             } else if (val[0] == "bl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{border-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{border-left:' + dblval + ';}\n');
                             } else if (val[0] == "br") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{border-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{border-right:' + dblval + ';}\n');
                             } else if (val[0] == "bt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{border-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{border-top:' + dblval + ';}\n');
                             } else if (val[0] == "bb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{border-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{border-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "c") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{color:' + dblval + ';}\n');
                             } else {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{' + val[0] + ':' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "a"||val[2]=="active") {
+                        } else if (val[2] == "a" || val[2] == "active") {
                             //active
                             if (val[0] == "bg") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{background:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{background:' + dblval + ';}\n');
                             } else if (val[0] == "bgi") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{background-image:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{background-image:' + dblval + ';}\n');
                             } else if (val[0] == "bgc") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{background-color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{background-color:' + dblval + ';}\n');
                             } else if (val[0] == "w") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{width:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{width:' + dblval + ';}\n');
                             } else if (val[0] == "h") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{height:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{height:' + dblval + ';}\n');
                             } else if (val[0] == "p") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{padding:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{padding:' + dblval + ';}\n');
                             } else if (val[0] == "pl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{padding-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{padding-left:' + dblval + ';}\n');
                             } else if (val[0] == "pr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{padding-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{padding-right:' + dblval + ';}\n');
                             } else if (val[0] == "pt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{padding-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{padding-top:' + dblval + ';}\n');
                             } else if (val[0] == "pb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{padding-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{padding-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "m") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{margin:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{margin:' + dblval + ';}\n');
                             } else if (val[0] == "ml") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{margin-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{margin-left:' + dblval + ';}\n');
                             } else if (val[0] == "mr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{margin-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{margin-right:' + dblval + ';}\n');
                             } else if (val[0] == "mt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{margin-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{margin-top:' + dblval + ';}\n');
                             } else if (val[0] == "mb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{margin-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{margin-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "b") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{border:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{border:' + dblval + ';}\n');
                             } else if (val[0] == "bl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{border-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{border-left:' + dblval + ';}\n');
                             } else if (val[0] == "br") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{border-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{border-right:' + dblval + ';}\n');
                             } else if (val[0] == "bt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{border-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{border-top:' + dblval + ';}\n');
                             } else if (val[0] == "bb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{border-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{border-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "c") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{color:' + dblval + ';}\n');
                             } else {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{' + val[0] + ':' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "c"||val[2]=="checked") {
+                        } else if (val[2] == "c" || val[2] == "checked") {
                             //ckecked
                             if (val[0] == "bg") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{background:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{background:' + dblval + ';}\n');
                             } else if (val[0] == "bgi") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{background-image:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{background-image:' + dblval + ';}\n');
                             } else if (val[0] == "bgc") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{background-color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{background-color:' + dblval + ';}\n');
                             } else if (val[0] == "w") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{width:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{width:' + dblval + ';}\n');
                             } else if (val[0] == "h") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{height:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{height:' + dblval + ';}\n');
                             } else if (val[0] == "p") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{padding:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{padding:' + dblval + ';}\n');
                             } else if (val[0] == "pl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{padding-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{padding-left:' + dblval + ';}\n');
                             } else if (val[0] == "pr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{padding-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{padding-right:' + dblval + ';}\n');
                             } else if (val[0] == "pt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{padding-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{padding-top:' + dblval + ';}\n');
                             } else if (val[0] == "pb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{padding-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{padding-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "m") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{margin:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{margin:' + dblval + ';}\n');
                             } else if (val[0] == "ml") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{margin-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{margin-left:' + dblval + ';}\n');
                             } else if (val[0] == "mr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{margin-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{margin-right:' + dblval + ';}\n');
                             } else if (val[0] == "mt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{margin-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{margin-top:' + dblval + ';}\n');
                             } else if (val[0] == "mb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{margin-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{margin-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "b") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{border:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{border:' + dblval + ';}\n');
                             } else if (val[0] == "bl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{border-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{border-left:' + dblval + ';}\n');
                             } else if (val[0] == "br") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{border-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{border-right:' + dblval + ';}\n');
                             } else if (val[0] == "bt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{border-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{border-top:' + dblval + ';}\n');
                             } else if (val[0] == "bb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{border-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{border-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "c") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{color:' + dblval + ';}\n');
                             } else {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{' + val[0] + ':' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "e"||val[2]=="enabled") {
+                        } else if (val[2] == "e" || val[2] == "enabled") {
                             //enabled
                             if (val[0] == "bg") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{background:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{background:' + dblval + ';}\n');
                             } else if (val[0] == "bgi") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{background-image:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{background-image:' + dblval + ';}\n');
                             } else if (val[0] == "bgc") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{background-color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{background-color:' + dblval + ';}\n');
                             } else if (val[0] == "w") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{width:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{width:' + dblval + ';}\n');
                             } else if (val[0] == "h") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{height:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{height:' + dblval + ';}\n');
                             } else if (val[0] == "p") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{padding:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{padding:' + dblval + ';}\n');
                             } else if (val[0] == "pl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{padding-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{padding-left:' + dblval + ';}\n');
                             } else if (val[0] == "pr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{padding-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{padding-right:' + dblval + ';}\n');
                             } else if (val[0] == "pt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{padding-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{padding-top:' + dblval + ';}\n');
                             } else if (val[0] == "pb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{padding-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{padding-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "m") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{margin:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{margin:' + dblval + ';}\n');
                             } else if (val[0] == "ml") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{margin-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{margin-left:' + dblval + ';}\n');
                             } else if (val[0] == "mr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{margin-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{margin-right:' + dblval + ';}\n');
                             } else if (val[0] == "mt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{margin-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{margin-top:' + dblval + ';}\n');
                             } else if (val[0] == "mb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{margin-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{margin-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "b") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{border:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{border:' + dblval + ';}\n');
                             } else if (val[0] == "bl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{border-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{border-left:' + dblval + ';}\n');
                             } else if (val[0] == "br") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{border-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{border-right:' + dblval + ';}\n');
                             } else if (val[0] == "bt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{border-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{border-top:' + dblval + ';}\n');
                             } else if (val[0] == "bb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{border-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{border-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "c") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{color:' + dblval + ';}\n');
                             } else {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{' + val[0] + ':' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "d"||val[2]=="disabled") {
+                        } else if (val[2] == "d" || val[2] == "disabled") {
                             //disabled
                             if (val[0] == "bg") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{background:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{background:' + dblval + ';}\n');
                             } else if (val[0] == "bgi") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{background-image:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{background-image:' + dblval + ';}\n');
                             } else if (val[0] == "bgc") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{background-color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{background-color:' + dblval + ';}\n');
                             } else if (val[0] == "w") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{width:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{width:' + dblval + ';}\n');
                             } else if (val[0] == "h") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{height:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{height:' + dblval + ';}\n');
                             } else if (val[0] == "p") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{padding:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{padding:' + dblval + ';}\n');
                             } else if (val[0] == "pl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{padding-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{padding-left:' + dblval + ';}\n');
                             } else if (val[0] == "pr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{padding-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{padding-right:' + dblval + ';}\n');
                             } else if (val[0] == "pt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{padding-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{padding-top:' + dblval + ';}\n');
                             } else if (val[0] == "pb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{padding-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{padding-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "m") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{margin:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{margin:' + dblval + ';}\n');
                             } else if (val[0] == "ml") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{margin-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{margin-left:' + dblval + ';}\n');
                             } else if (val[0] == "mr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{margin-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{margin-right:' + dblval + ';}\n');
                             } else if (val[0] == "mt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{margin-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{margin-top:' + dblval + ';}\n');
                             } else if (val[0] == "mb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{margin-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{margin-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "b") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{border:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{border:' + dblval + ';}\n');
                             } else if (val[0] == "bl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{border-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{border-left:' + dblval + ';}\n');
                             } else if (val[0] == "br") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{border-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{border-right:' + dblval + ';}\n');
                             } else if (val[0] == "bt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{border-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{border-top:' + dblval + ';}\n');
                             } else if (val[0] == "bb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{border-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{border-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "c") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{color:' + dblval + ';}\n');
                             } else {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{' + val[0] + ':' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "fc"||val[2]=="first-child") {
+                        } else if (val[2] == "fc" || val[2] == "first-child") {
                             //first-childs
                             if (val[0] == "bg") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{background:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{background:' + dblval + ';}\n');
                             } else if (val[0] == "bgi") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{background-image:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{background-image:' + dblval + ';}\n');
                             } else if (val[0] == "bgc") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{background-color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{background-color:' + dblval + ';}\n');
                             } else if (val[0] == "w") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{width:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{width:' + dblval + ';}\n');
                             } else if (val[0] == "h") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{height:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{height:' + dblval + ';}\n');
                             } else if (val[0] == "p") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{padding:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{padding:' + dblval + ';}\n');
                             } else if (val[0] == "pl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{padding-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{padding-left:' + dblval + ';}\n');
                             } else if (val[0] == "pr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{padding-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{padding-right:' + dblval + ';}\n');
                             } else if (val[0] == "pt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{padding-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{padding-top:' + dblval + ';}\n');
                             } else if (val[0] == "pb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{padding-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{padding-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "m") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{margin:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{margin:' + dblval + ';}\n');
                             } else if (val[0] == "ml") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{margin-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{margin-left:' + dblval + ';}\n');
                             } else if (val[0] == "mr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{margin-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{margin-right:' + dblval + ';}\n');
                             } else if (val[0] == "mt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{margin-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{margin-top:' + dblval + ';}\n');
                             } else if (val[0] == "mb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{margin-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{margin-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "b") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{border:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{border:' + dblval + ';}\n');
                             } else if (val[0] == "bl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{border-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{border-left:' + dblval + ';}\n');
                             } else if (val[0] == "br") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{border-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{border-right:' + dblval + ';}\n');
                             } else if (val[0] == "bt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{border-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{border-top:' + dblval + ';}\n');
                             } else if (val[0] == "bb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{border-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{border-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "c") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{color:' + dblval + ';}\n');
                             } else {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{' + val[0] + ':' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "l"||val[2]=="link") {
+                        } else if (val[2] == "l" || val[2] == "link") {
                             //link
                             if (val[0] == "bg") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{background:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{background:' + dblval + ';}\n');
                             } else if (val[0] == "bgi") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{background-image:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{background-image:' + dblval + ';}\n');
                             } else if (val[0] == "bgc") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{background-color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{background-color:' + dblval + ';}\n');
                             } else if (val[0] == "w") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{width:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{width:' + dblval + ';}\n');
                             } else if (val[0] == "h") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{height:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{height:' + dblval + ';}\n');
                             } else if (val[0] == "p") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{padding:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{padding:' + dblval + ';}\n');
                             } else if (val[0] == "pl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{padding-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{padding-left:' + dblval + ';}\n');
                             } else if (val[0] == "pr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{padding-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{padding-right:' + dblval + ';}\n');
                             } else if (val[0] == "pt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{padding-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{padding-top:' + dblval + ';}\n');
                             } else if (val[0] == "pb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{padding-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{padding-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "m") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{margin:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{margin:' + dblval + ';}\n');
                             } else if (val[0] == "ml") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{margin-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{margin-left:' + dblval + ';}\n');
                             } else if (val[0] == "mr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{margin-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{margin-right:' + dblval + ';}\n');
                             } else if (val[0] == "mt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{margin-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{margin-top:' + dblval + ';}\n');
                             } else if (val[0] == "mb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{margin-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{margin-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "b") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{border:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{border:' + dblval + ';}\n');
                             } else if (val[0] == "bl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{border-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{border-left:' + dblval + ';}\n');
                             } else if (val[0] == "br") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{border-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{border-right:' + dblval + ';}\n');
                             } else if (val[0] == "bt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{border-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{border-top:' + dblval + ';}\n');
                             } else if (val[0] == "bb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{border-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{border-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "c") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{color:' + dblval + ';}\n');
                             } else {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{' + val[0] + ':' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "v"||val[2]=="visited") {
+                        } else if (val[2] == "v" || val[2] == "visited") {
                             //visited
                             if (val[0] == "bg") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{background:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{background:' + dblval + ';}\n');
                             } else if (val[0] == "bgi") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{background-image:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{background-image:' + dblval + ';}\n');
                             } else if (val[0] == "bgc") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{background-color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{background-color:' + dblval + ';}\n');
                             } else if (val[0] == "w") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{width:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{width:' + dblval + ';}\n');
                             } else if (val[0] == "h") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{height:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{height:' + dblval + ';}\n');
                             } else if (val[0] == "p") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{padding:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{padding:' + dblval + ';}\n');
                             } else if (val[0] == "pl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{padding-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{padding-left:' + dblval + ';}\n');
                             } else if (val[0] == "pr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{padding-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{padding-right:' + dblval + ';}\n');
                             } else if (val[0] == "pt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{padding-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{padding-top:' + dblval + ';}\n');
                             } else if (val[0] == "pb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{padding-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{padding-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "m") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{margin:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{margin:' + dblval + ';}\n');
                             } else if (val[0] == "ml") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{margin-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{margin-left:' + dblval + ';}\n');
                             } else if (val[0] == "mr") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{margin-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{margin-right:' + dblval + ';}\n');
                             } else if (val[0] == "mt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{margin-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{margin-top:' + dblval + ';}\n');
                             } else if (val[0] == "mb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{margin-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{margin-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "b") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{border:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{border:' + dblval + ';}\n');
                             } else if (val[0] == "bl") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{border-left:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{border-left:' + dblval + ';}\n');
                             } else if (val[0] == "br") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{border-right:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{border-right:' + dblval + ';}\n');
                             } else if (val[0] == "bt") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{border-top:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{border-top:' + dblval + ';}\n');
                             } else if (val[0] == "bb") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{border-bottom:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{border-bottom:' + dblval + ';}\n');
                             } else if (val[0] == "c") {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{color:' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{color:' + dblval + ';}\n');
                             } else {
-                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{' + val[0] + ':' + val[1] + ';}\n');
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{' + val[0] + ':' + dblval + ';}\n');
                             }
                         }
                     }

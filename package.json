@@ -1,0 +1,23 @@
+{
+  "name": "orna4node",
+  "version": "0.4.0",
+  "description": "orna4node is a tool for creation Atomic CSS.",
+  "main": "orna4node.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrnaOrg/Orna4Node.git"
+  },
+  "keywords": [
+    "Atomic",
+    "CSS",
+    "Orna",
+    "Tool",
+    "Web",
+    "ACSS",
+    "Parser",
+    "CSS"
+  ],
+  "author": "Dima Popov",
+  "license": "MIT",
+  "homepage": "https://ornaorg.github.io",
+}

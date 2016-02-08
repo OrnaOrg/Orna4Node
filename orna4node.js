@@ -1,9 +1,8 @@
-
 /*
-*Orna for Node
-*version: 0.1.0
-*ornaorg.github.io
-*/
+ *Orna for Node
+ *version: 0.2.0
+ *ornaorg.github.io
+ */
 var fs = require('fs');
 
 function createatom() {
@@ -27,9 +26,50 @@ function createatom() {
                 if (isclass == -1) {
                     console.log(isclass);
                     if (val[1] !== undefined & val[2] === undefined) {
-                        fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{' + val[0] + ':' + val[1] + ';}\n');
+                        if (val[0] == "bg") {
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{background:' + val[1] + ';}\n');
+                        } else if (val[0] == "bgi") {
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{background-image:' + val[1] + ';}\n');
+                        } else if (val[0] == "bgc") {
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{background-color:' + val[1] + ';}\n');
+                        } else {
+                            fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '{' + val[0] + ':' + val[1] + ';}\n');
+                        }
                     } else if (val[1] !== undefined & val[2] !== undefined) {
-                        fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':' + val[2] + '{' + val[0] + ':' + val[1] + ';}\n');
+                        if (val[2] == "h") {
+                            //hover
+                            if (val[0] == "bg") {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{background:' + val[1] + ';}\n');
+                            } else if (val[0] == "bgi") {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{background-image:' + val[1] + ';}\n');
+                            } else if (val[0] == "bgc") {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{background-color:' + val[1] + ';}\n');
+                            } else {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{' + val[0] + ':' + val[1] + ';}\n');
+                            }
+                        } else if (val[2] == "f") {
+                            //focus
+                            if (val[0] == "bg") {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{background:' + val[1] + ';}\n');
+                            } else if (val[0] == "bgi") {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{background-image:' + val[1] + ';}\n');
+                            } else if (val[0] == "bgc") {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{background-color:' + val[1] + ';}\n');
+                            } else {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{' + val[0] + ':' + val[1] + ';}\n');
+                            }
+                        } else if (val[2] == "a") {
+                            //active
+                            if (val[0] == "bg") {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{background:' + val[1] + ';}\n');
+                            } else if (val[0] == "bgi") {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{background-image:' + val[1] + ';}\n');
+                            } else if (val[0] == "bgc") {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{background-color:' + val[1] + ';}\n');
+                            } else {
+                                fs.appendFileSync('atomic.css', '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{' + val[0] + ':' + val[1] + ';}\n');
+                            }
+                        }
                     }
                 }
             }
@@ -42,9 +82,6 @@ function createatom() {
 createatom();
 /*Start on html change*/
 var watcher = fs.watch('index.html');
-watcher.on('change', function(){
-    
+watcher.on('change', function() {
     createatom();
-
-    
 });

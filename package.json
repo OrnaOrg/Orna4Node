@@ -1,11 +1,11 @@
 {
   "name": "orna4node",
-  "version": "0.4.6",
+  "version": "0.5.0",
   "description": "orna4node is a tool for creation Atomic CSS.",
   "main": "orna4node.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OrnaOrg/Orna4Node.git"
+    "url": "git+https://github.com/OrnaOrg/Orna4Node-CLI.git"
   },
   "keywords": [
     "Atomic",

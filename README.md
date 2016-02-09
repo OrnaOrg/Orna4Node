@@ -34,10 +34,9 @@ Atomic CSS classes auto-creator
   -  border or b (bl,br,bt,bb)
   -  And other **!!!**
 
+Example
+--------
 
-
-**% = per**
-
-**width_100per**
+**class=" bgc_red height_100px width_50% "**
 
 See also [ornajs](http://ornaorg.github.io);

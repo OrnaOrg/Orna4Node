@@ -1,15 +1,15 @@
 /*
  *Orna for Node
- *version: 0.4.6
+ *version: 0.5.0
  *ornaorg.github.io
  */
 var fs = require('fs');
 
 function createatom() {
     /*Read HTML*/
-    var html = fs.readFileSync('index.html', 'utf8');
+    var html = fs.readFileSync('index.html', 'utf-8');
     var cssname ="atomic.css";
-        var pattern = /class="([a-z_0-9a-z_a-z ]+)"/g;
+        var pattern = /class="([a-z-a-z_%0-9a-z_a-z ]+)"/g;
         var attr = pattern.exec(html);
         /*Create CSS*/
         fs.writeFileSync(cssname, '/*ornaorg.github.io*/\n');
@@ -24,8 +24,13 @@ function createatom() {
                 var isclass = csstext.search(classes[i]);
                 if (isclass == -1) {
                     console.log(isclass);
+                   
+                       val[1]=val[1].replace(/%/, '\\%');
+                        var dblval=val[1].replace(/\%/, '\\%');
+                        
+                    
                     if (val[1] !== undefined & val[2] === undefined) {
-                        var dblval = val[1].replace(/per/, '%');
+                      
                         if (val[0] == "bg") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{background:' + dblval + ';}\n');
                         } else if (val[0] == "bgi") {

@@ -1,15 +1,13 @@
 /*
  *Orna for Node
- *version: 0.4.0
+ *version: 0.4.2
  *ornaorg.github.io
  */
 var fs = require('fs');
 
 function createatom() {
     /*Read HTML*/
-    fs.readFile('index.html', 'utf8', (err, data) => {
-        if (err) throw err;
-        var html = data;
+    var html = fs.readFileSync('index.html', 'utf8');
         var pattern = /class="([a-z_0-9a-z_a-z ]+)"/g;
         var attr = pattern.exec(html);
         /*Create CSS*/
@@ -504,7 +502,7 @@ function createatom() {
             attr = pattern.exec(html);
         }
         //-------------------------------------
-    });
+
 }
 createatom();
 /*Start on html change*/

@@ -14,13 +14,13 @@ Atomic CSS classes auto-creator
 
 **Event, Pseudo-classes**: 
    
-   *  hover or h
-   *  focus or f
-   *  active or a
+   *  hover or ho
+   *  focus or f0
+   *  active or ac
    *  first-child or fc
-   *  link or l
-   *  visited or v
-   *  checked or c
+   *  link or lk
+   *  visited or vi
+   *  checked or ch
 
 **Property**: 
 
@@ -32,11 +32,11 @@ Atomic CSS classes auto-creator
   -  background or bg
   -  background-color or bgc
   -  border or b (bl,br,bt,bb)
-  -  And other **!!!**
+  -  And other like in CSS only with underscore :=_ **!!!**
 
 Example
 --------
 
-**class=" bgc_red height_100px width_50% "**
+**class=" bgc_red height_100px width_50% color_#0f0 "**
 
 See also [ornajs](http://ornaorg.github.io);

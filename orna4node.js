@@ -1,6 +1,7 @@
+
 /*
  *Orna for Node
- *version: 0.5.0
+ *version: 0.6.5
  *ornaorg.github.io
  */
 var fs = require('fs');
@@ -9,7 +10,7 @@ function createatom() {
     /*Read HTML*/
     var html = fs.readFileSync('index.html', 'utf-8');
     var cssname ="atomic.css";
-        var pattern = /class="([a-z-a-z_%0-9a-z_a-z ]+)"/g;
+        var pattern = /class="([a-z-a-z_#%0-9a-z_a-z ]+)"/g;
         var attr = pattern.exec(html);
         /*Create CSS*/
         fs.writeFileSync(cssname, '/*ornaorg.github.io*/\n');
@@ -26,7 +27,9 @@ function createatom() {
                     console.log(isclass);
                    
                        val[1]=val[1].replace(/%/, '\\%');
-                        var dblval=val[1].replace(/\%/, '\\%');
+                       val[1]=val[1].replace(/#/, '\\#');
+                        var dblval=val[1].replace(/\\/, '');
+                       
                         
                     
                     if (val[1] !== undefined & val[2] === undefined) {
@@ -77,7 +80,7 @@ function createatom() {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{' + val[0] + ':' + dblval + ';}\n');
                         }
                     } else if (val[1] !== undefined & val[2] !== undefined) {
-                        if (val[2] == "h" || val[2] == "hover") {
+                        if (val[2] == "ho" || val[2] == "hover") {
                             //hover
                             if (val[0] == "bg") {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{background:' + dblval + ';}\n');
@@ -124,7 +127,7 @@ function createatom() {
                             } else {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "f" || val[2] == "focus") {
+                        } else if (val[2] == "fo" || val[2] == "focus") {
                             //focus
                             if (val[0] == "bg") {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{background:' + dblval + ';}\n');
@@ -171,7 +174,7 @@ function createatom() {
                             } else {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "a" || val[2] == "active") {
+                        } else if (val[2] == "ac" || val[2] == "active") {
                             //active
                             if (val[0] == "bg") {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{background:' + dblval + ';}\n');
@@ -218,7 +221,7 @@ function createatom() {
                             } else {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "c" || val[2] == "checked") {
+                        } else if (val[2] == "ch" || val[2] == "checked") {
                             //ckecked
                             if (val[0] == "bg") {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{background:' + dblval + ';}\n');
@@ -265,7 +268,7 @@ function createatom() {
                             } else {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "e" || val[2] == "enabled") {
+                        } else if (val[2] == "en" || val[2] == "enabled") {
                             //enabled
                             if (val[0] == "bg") {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{background:' + dblval + ';}\n');
@@ -312,7 +315,7 @@ function createatom() {
                             } else {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "d" || val[2] == "disabled") {
+                        } else if (val[2] == "di" || val[2] == "disabled") {
                             //disabled
                             if (val[0] == "bg") {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{background:' + dblval + ';}\n');
@@ -406,7 +409,7 @@ function createatom() {
                             } else {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "l" || val[2] == "link") {
+                        } else if (val[2] == "lk" || val[2] == "link") {
                             //link
                             if (val[0] == "bg") {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{background:' + dblval + ';}\n');
@@ -453,7 +456,7 @@ function createatom() {
                             } else {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{' + val[0] + ':' + dblval + ';}\n');
                             }
-                        } else if (val[2] == "v" || val[2] == "visited") {
+                        } else if (val[2] == "vi" || val[2] == "visited") {
                             //visited
                             if (val[0] == "bg") {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{background:' + dblval + ';}\n');
@@ -501,6 +504,55 @@ function createatom() {
                                 fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{' + val[0] + ':' + dblval + ';}\n');
                             }
                         }
+                    else {
+                        
+                           if (val[0] == "bg") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{background:' + dblval + ';}\n');
+                            } else if (val[0] == "bgi") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{background-image:' + dblval + ';}\n');
+                            } else if (val[0] == "bgc") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{background-color:' + dblval + ';}\n');
+                            } else if (val[0] == "w") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{width:' + dblval + ';}\n');
+                            } else if (val[0] == "h") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{height:' + dblval + ';}\n');
+                            } else if (val[0] == "p") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{padding:' + dblval + ';}\n');
+                            } else if (val[0] == "pl") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{padding-left:' + dblval + ';}\n');
+                            } else if (val[0] == "pr") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{padding-right:' + dblval + ';}\n');
+                            } else if (val[0] == "pt") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{padding-top:' + dblval + ';}\n');
+                            } else if (val[0] == "pb") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{padding-bottom:' + dblval + ';}\n');
+                            } else if (val[0] == "m") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{margin:' + dblval + ';}\n');
+                            } else if (val[0] == "ml") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{margin-left:' + dblval + ';}\n');
+                            } else if (val[0] == "mr") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{margin-right:' + dblval + ';}\n');
+                            } else if (val[0] == "mt") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{margin-top:' + dblval + ';}\n');
+                            } else if (val[0] == "mb") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{margin-bottom:' + dblval + ';}\n');
+                            } else if (val[0] == "b") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{border:' + dblval + ';}\n');
+                            } else if (val[0] == "bl") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{border-left:' + dblval + ';}\n');
+                            } else if (val[0] == "br") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{border-right:' + dblval + ';}\n');
+                            } else if (val[0] == "bt") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] +  '{border-top:' + dblval + ';}\n');
+                            } else if (val[0] == "bb") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] + '{border-bottom:' + dblval + ';}\n');
+                            } else if (val[0] == "c") {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] + '{color:' + dblval + ';}\n');
+                            } else {
+                                fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + val[2] + '{' + val[0] + ':' + dblval + ';}\n');
+                            }
+                        
+                    }
                     }
                 }
             }

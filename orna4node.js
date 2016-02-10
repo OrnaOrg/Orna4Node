@@ -9,7 +9,7 @@ function createatom() {
     /*Read HTML*/
     var html = fs.readFileSync('index.html', 'utf-8');
     var cssname = "atomic.css";
-    var pattern = /class="([a-z-a-z_#%0-9a-z_a-z ]+)"/g;
+    var pattern = /class="([a-z-a-z_.()#%0-9a-z_a-z ]+)"/g;
     var attr = pattern.exec(html);
     /*Create CSS*/
     fs.writeFileSync(cssname, '/*ornaorg.github.io*/\n');
@@ -25,9 +25,26 @@ function createatom() {
             if (isclass == -1) {
                 console.log(isclass);
                 val[1] = val[1].replace(/%/, '\\%');
-                var dblval = val[1].replace(/\\/, '');
+                val[1] = val[1].replace(/#/, '\\#');
+                val[1] = val[1].replace(/\(/, '\\(');
+                val[1] = val[1].replace(/\)/, '\\)');
+                val[1] = val[1].replace(/\./, '\\.');
+                var dblval = val[1].replace(/\\/g, '');
+                dblval = val[1].replace(/\\/g, '');
+                var prop = val[0];
+                if (prop == 't-dur') {
+                    prop = 'transition-duration';
+                } else if (prop == 't-pro') {
+                    prop = 'transition-property';
+                } else if (prop == 't-del') {
+                    prop = 'transition-delay';
+                } else if (prop == 't-fun') {
+                    prop = 'transition-timing-function'
+                }
                 if (val[2] !== undefined) {
+                    val[2] = val[2].replace(/%/, '\\%');
                     val[2] = val[2].replace(/#/, '\\#');
+                    val[2] = val[2].replace(/\./, '\\.');
                     var id = val[2];
                     id = val[2].replace(/\\/, '');
                 }
@@ -75,7 +92,7 @@ function createatom() {
                     } else if (val[0] == "c") {
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{color:' + dblval + ';}\n');
                     } else {
-                        fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{' + val[0] + ':' + dblval + ';}\n');
+                        fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{' + prop + ':' + dblval + ';}\n');
                     }
                 } else if (val[1] !== undefined & val[2] !== undefined) {
                     if (val[2] == "ho" || val[2] == "hover") {
@@ -123,7 +140,7 @@ function createatom() {
                         } else if (val[0] == "c") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{color:' + dblval + ';}\n');
                         } else {
-                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{' + val[0] + ':' + dblval + ';}\n');
+                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{' + prop + ':' + dblval + ';}\n');
                         }
                     } else if (val[2] == "fo" || val[2] == "focus") {
                         //focus
@@ -170,7 +187,7 @@ function createatom() {
                         } else if (val[0] == "c") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{color:' + dblval + ';}\n');
                         } else {
-                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{' + val[0] + ':' + dblval + ';}\n');
+                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{' + prop + ':' + dblval + ';}\n');
                         }
                     } else if (val[2] == "ac" || val[2] == "active") {
                         //active
@@ -217,7 +234,7 @@ function createatom() {
                         } else if (val[0] == "c") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{color:' + dblval + ';}\n');
                         } else {
-                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{' + val[0] + ':' + dblval + ';}\n');
+                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{' + prop + ':' + dblval + ';}\n');
                         }
                     } else if (val[2] == "ch" || val[2] == "checked") {
                         //ckecked
@@ -264,7 +281,7 @@ function createatom() {
                         } else if (val[0] == "c") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{color:' + dblval + ';}\n');
                         } else {
-                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{' + val[0] + ':' + dblval + ';}\n');
+                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{' + prop + ':' + dblval + ';}\n');
                         }
                     } else if (val[2] == "en" || val[2] == "enabled") {
                         //enabled
@@ -311,7 +328,7 @@ function createatom() {
                         } else if (val[0] == "c") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{color:' + dblval + ';}\n');
                         } else {
-                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{' + val[0] + ':' + dblval + ';}\n');
+                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{' + prop + ':' + dblval + ';}\n');
                         }
                     } else if (val[2] == "di" || val[2] == "disabled") {
                         //disabled
@@ -358,7 +375,7 @@ function createatom() {
                         } else if (val[0] == "c") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{color:' + dblval + ';}\n');
                         } else {
-                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{' + val[0] + ':' + dblval + ';}\n');
+                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{' + prop + ':' + dblval + ';}\n');
                         }
                     } else if (val[2] == "fc" || val[2] == "first-child") {
                         //first-childs
@@ -405,7 +422,7 @@ function createatom() {
                         } else if (val[0] == "c") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{color:' + dblval + ';}\n');
                         } else {
-                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{' + val[0] + ':' + dblval + ';}\n');
+                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{' + prop + ':' + dblval + ';}\n');
                         }
                     } else if (val[2] == "lk" || val[2] == "link") {
                         //link
@@ -452,7 +469,7 @@ function createatom() {
                         } else if (val[0] == "c") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{color:' + dblval + ';}\n');
                         } else {
-                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{' + val[0] + ':' + dblval + ';}\n');
+                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{' + prop + ':' + dblval + ';}\n');
                         }
                     } else if (val[2] == "vi" || val[2] == "visited") {
                         //visited
@@ -499,7 +516,7 @@ function createatom() {
                         } else if (val[0] == "c") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{color:' + dblval + ';}\n');
                         } else {
-                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{' + val[0] + ':' + dblval + ';}\n');
+                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{' + prop + ':' + dblval + ';}\n');
                         }
                     } else {
                         if (val[0] == "bg") {
@@ -545,7 +562,7 @@ function createatom() {
                         } else if (val[0] == "c") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + id + '{color:' + dblval + ';}\n');
                         } else {
-                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + id + '{' + val[0] + ':' + dblval + ';}\n');
+                            fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + id + '{' + prop + ':' + dblval + ';}\n');
                         }
                     }
                 }

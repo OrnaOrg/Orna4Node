@@ -15,7 +15,7 @@ Atomic CSS classes auto-creator
 **Event, Pseudo-classes**: 
    
    *  hover or ho
-   *  focus or f0
+   *  focus or fo
    *  active or ac
    *  first-child or fc
    *  link or lk

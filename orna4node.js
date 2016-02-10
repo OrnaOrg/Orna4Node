@@ -1,13 +1,14 @@
 /*
  *Orna for Node
- *version: 0.6.5
+ *version: 0.7.0
  *ornaorg.github.io
  */
 var fs = require('fs');
 
 function createatom() {
     /*Read HTML*/
-    var html = fs.readFileSync('index.html', 'utf-8');
+    var file ='index.html';
+    var html = fs.readFileSync(file, 'utf-8');
     var cssname = "atomic.css";
     var pattern = /class="([a-z-a-z_.()#%0-9a-z_a-z ]+)"/g;
     var attr = pattern.exec(html);
@@ -55,6 +56,12 @@ function createatom() {
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{background-image:' + dblval + ';}\n');
                     } else if (val[0] == "bgc") {
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{background-color:' + dblval + ';}\n');
+                    } else if (val[0] == "bgr") {
+                        fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{background-repeat:' + dblval + ';}\n');
+                    }else if (val[0] == "bgp") {
+                        fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{background-position:' + dblval + ';}\n');
+                    }else if (val[0] == "bga") {
+                        fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{background-attachment:' + dblval + ';}\n');
                     } else if (val[0] == "w") {
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{width:' + dblval + ';}\n');
                     } else if (val[0] == "h") {
@@ -575,7 +582,7 @@ function createatom() {
 }
 createatom();
 /*Start on html change*/
-var watcher = fs.watch('index.html');
+var watcher = fs.watch(file);
 watcher.on('change', function() {
     createatom();
 });

@@ -1,16 +1,16 @@
 /*
  *Orna for Node
- *version: 0.7.0
+ *version: 0.7.5
  *ornaorg.github.io
  */
 var fs = require('fs');
 
 function createatom() {
     /*Read HTML*/
-    var file ='index.html';
+    var file ='project/index.html';
     var html = fs.readFileSync(file, 'utf-8');
-    var cssname = "atomic.css";
-    var pattern = /class="([a-z-a-z_.()#%0-9a-z_a-z ]+)"/g;
+    var cssname = "project/atomic.css";
+    var pattern = /class="([a-z-a-z_.()@#%0-9a-z_a-z ]+)"/g;
     var attr = pattern.exec(html);
     /*Create CSS*/
     fs.writeFileSync(cssname, '/*ornaorg.github.io*/\n');
@@ -42,12 +42,19 @@ function createatom() {
                 } else if (prop == 't-fun') {
                     prop = 'transition-timing-function'
                 }
-                if (val[2] !== undefined) {
+                if (val[2] !== undefined && val[2].search('@')==-1) {
                     val[2] = val[2].replace(/%/, '\\%');
                     val[2] = val[2].replace(/#/, '\\#');
                     val[2] = val[2].replace(/\./, '\\.');
                     var id = val[2];
                     id = val[2].replace(/\\/, '');
+                }
+                 else if (val[2] !== undefined && val[2].search('@')!==-1) {
+                 
+                    val[2] = val[2].replace(/@/, '\\@');
+                    var device = 'all';
+                    var querywidth = val[2].replace(/\\@/, '');
+            
                 }
                 if (val[1] !== undefined & val[2] === undefined) {
                     if (val[0] == "bg") {
@@ -525,7 +532,58 @@ function createatom() {
                         } else {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{' + prop + ':' + dblval + ';}\n');
                         }
-                    } else {
+                    } 
+                     else if (val[2]!==undefined && val[2].search('@')!==-1) {
+                        if (val[0] == "bg") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{background:' + dblval + ';} }\n');
+                        } else if (val[0] == "bgi") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{background-image:' + dblval + ';} }\n');
+                        } else if (val[0] == "bgc") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{background-color:' + dblval + ';} }\n');
+                        } else if (val[0] == "w") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{width:' + dblval + ';} }\n');
+                        } else if (val[0] == "h") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{height:' + dblval + ';} }\n');
+                        } else if (val[0] == "p") {
+fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{padding:' + dblval + ';} }\n');                        } else if (val[0] == "pl") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] +  '{padding-left:' + dblval + ';} }\n');
+                        } else if (val[0] == "pr") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] +  '{padding-right:' + dblval + ';} }\n');
+                        } else if (val[0] == "pt") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{padding-top:' + dblval + ';} }\n');
+                        } else if (val[0] == "pb") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{padding-bottom:' + dblval + ';} }\n');
+                        } else if (val[0] == "m") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] +  '{margin:' + dblval + ';} }\n');
+                        } else if (val[0] == "ml") {
+                           fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{margin-left:' + dblval + ';} }\n');
+                        } else if (val[0] == "mr") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{margin-right:' + dblval + ';} }\n');
+                        } else if (val[0] == "mt") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] +  '{margin-top:' + dblval + ';} }\n');
+                        } else if (val[0] == "mb") {
+                          fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] +  '{margin-bottom:' + dblval + ';} }\n');
+                        } else if (val[0] == "b") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] +'{border:' + dblval + ';} }\n');
+                        } else if (val[0] == "bl") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{border-left:' + dblval + ';} }\n');
+                        } else if (val[0] == "br") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] +  '{border-right:' + dblval + ';} }\n');
+                        } else if (val[0] == "bt") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{border-top:' + dblval + ';} }\n');
+                        } else if (val[0] == "bb") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] +  '{border-bottom:' + dblval + ';} }\n');
+                        } else if (val[0] == "c") {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] +  '{color:' + dblval + ';} }\n');
+                        } else {
+                            fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth +'){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{' + prop + ':' + dblval + ';} }\n');
+                        }
+                    }
+                    
+                    
+                    
+                    
+                    else {
                         if (val[0] == "bg") {
                             fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + id + '{background:' + dblval + ';}\n');
                         } else if (val[0] == "bgi") {

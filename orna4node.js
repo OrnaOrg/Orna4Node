@@ -7,7 +7,7 @@ var fs = require('fs');
 
 function createatom() {
     /*Read HTML*/
-    var file ='project/index.html';
+    var file ='index.html';
     var html = fs.readFileSync(file, 'utf-8');
     var cssname = "project/atomic.css";
     var pattern = /class="([a-z-a-z_.()@#%0-9a-z_a-z ]+)"/g;
@@ -640,7 +640,7 @@ fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth 
 }
 createatom();
 /*Start on html change*/
-var watcher = fs.watch(file);
+var watcher = fs.watch('index.html');
 watcher.on('change', function() {
     createatom();
 });

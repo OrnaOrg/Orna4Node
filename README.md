@@ -29,9 +29,11 @@ Atomic CSS classes auto-creator
   -  height or h
   -  margin or m (ml,mr,mt,mb)
   -  padding or p (pl,pr,pt,pb)
+  -  border or b (bl,br,bt,bb)
   -  background or bg
   -  background-color or bgc
-  -  border or b (bl,br,bt,bb)
+  -  background-image or bgi
+  -  background-position or bgp
   -  And other like in CSS only with underscore :=_ **!!!**
 
 Example
@@ -39,4 +41,6 @@ Example
 
 **class=" bgc_red height_100px width_50% color_#0f0 "**
 
-See also [ornajs](http://ornaorg.github.io);
+Page: [orna4node - NW.js](http://ornaorg.github.io/Orna4Node.html)
+
+See also: [ornajs](http://ornaorg.github.io);

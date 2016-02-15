@@ -1,7 +1,7 @@
 # Orna4Node
 
 Atomic CSS classes auto-creator
--------------
+-------------------------------
 
  - Just download it and put into your work directory with index.html.
 
@@ -29,18 +29,30 @@ Atomic CSS classes auto-creator
   -  height or h
   -  margin or m (ml,mr,mt,mb)
   -  padding or p (pl,pr,pt,pb)
-  -  border or b (bl,br,bt,bb)
   -  background or bg
   -  background-color or bgc
-  -  background-image or bgi
-  -  background-position or bgp
-  -  And other like in CSS only with underscore :=_ **!!!**
+  -  border or b (bl,br,bt,bb)
+  -  text-align or ta
+  -  text-decoration or td
+  -  font-family or ff
+  -  transition-duration or t-dur
+  -  transition-delay or t-del
+  -  transition-property or t-pro
+  -  transition-timing-function or t-fun
+  -  And other like in CSS but with underscore : = _ **!!!**
 
 Example
 --------
 
-**class=" bgc_red height_100px width_50% color_#0f0 "**
+U can write:
 
-Page: [orna4node - NW.js](http://ornaorg.github.io/Orna4Node.html)
+**class=" background-color_red height_100px width_50% color_#0f0 "**
+
+or
+
+**class=" bgc_red h_100px w_50% c_#0f0 "**
+
+
+More info: [orna4node - NW.js](http://ornaorg.github.io/Orna4Node.html)
 
 See also: [ornajs](http://ornaorg.github.io);

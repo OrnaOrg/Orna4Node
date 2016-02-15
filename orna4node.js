@@ -1,13 +1,12 @@
 /*
  *Orna for Node
- *version: 0.8.5
+ *version: 0.9.0
  *ornaorg.github.io
  */
-var fs = require('fs');
 
-function createatom() {
+function createatom(file) {
+    var fs = require('fs');
     /*Read HTML*/
-    var file = 'index.html';
     var html = fs.readFileSync(file, 'utf-8');
     var cssname = "atomic.css";
     var pattern = /class="([a-z-a-z_.()@#%0-9a-z_a-z ]+)"/g;
@@ -89,6 +88,16 @@ function createatom() {
                     prop = 'border-top';
                 } else if (prop == 'bb') {
                     prop = 'border-bottom';
+                } else if (prop == 'ta') {
+                    prop = 'text-align';
+                } else if (prop == 'jc') {
+                    prop = 'justify-content';
+                } else if (prop == 'ai') {
+                    prop = 'align-items';
+                } else if (prop == 'td') {
+                    prop = 'text-decoration';
+                } else if (prop == 'ff') {
+                    prop = 'font-family';
                 }
                 if (val[2] !== undefined && val[2].search('@') == -1) {
                     val[2] = val[2].replace(/%/, '\\%');
@@ -97,70 +106,44 @@ function createatom() {
                     var id = val[2];
                     id = val[2].replace(/\\/, '');
                 } else if (val[2] !== undefined && val[2].search('@') !== -1) {
-
                     val[2] = val[2].replace(/@/, '\\@');
                     var device = 'all';
                     var querywidth = val[2].replace(/\\@/, '');
-
                 }
                 if (val[1] !== undefined & val[2] === undefined) {
-
                     fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{' + prop + ':' + dblval + ';}\n');
-
                 } else if (val[1] !== undefined & val[2] !== undefined) {
                     if (val[2] == "ho" || val[2] == "hover") {
                         //hover
-
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':hover{' + prop + ':' + dblval + ';}\n');
-
                     } else if (val[2] == "fo" || val[2] == "focus") {
                         //focus
-
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':focus{' + prop + ':' + dblval + ';}\n');
-
                     } else if (val[2] == "ac" || val[2] == "active") {
                         //active
-
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':active{' + prop + ':' + dblval + ';}\n');
-
                     } else if (val[2] == "ch" || val[2] == "checked") {
                         //ckecked
-
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':checked{' + prop + ':' + dblval + ';}\n');
-
                     } else if (val[2] == "en" || val[2] == "enabled") {
                         //enabled
-
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':enabled{' + prop + ':' + dblval + ';}\n');
-
                     } else if (val[2] == "di" || val[2] == "disabled") {
                         //disabled
-
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':disabled{' + prop + ':' + dblval + ';}\n');
-
                     } else if (val[2] == "fc" || val[2] == "first-child") {
                         //first-childs
-
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':first-child{' + prop + ':' + dblval + ';}\n');
-
                     } else if (val[2] == "lk" || val[2] == "link") {
                         //link
-
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':link{' + prop + ':' + dblval + ';}\n');
-
                     } else if (val[2] == "vi" || val[2] == "visited") {
                         //visited
-
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ':visited{' + prop + ':' + dblval + ';}\n');
-
                     } else if (val[2] !== undefined && val[2].search('@') !== -1) {
-
                         fs.appendFileSync(cssname, '@media ' + device + ' and (max-width:' + querywidth + '){ .' + val[0] + '_' + val[1] + '_' + val[2] + '{' + prop + ':' + dblval + ';} }\n');
-
                     } else {
-
                         fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '_' + val[2] + ' ' + id + '{' + prop + ':' + dblval + ';}\n');
-
                     }
                 }
             }
@@ -168,11 +151,11 @@ function createatom() {
         //-------------------------------------
         attr = pattern.exec(html);
     }
-    //-------------------------------------
+    var watcher = fs.watch(file);
+    watcher.on('change', function() {
+createatom(file);
+    });
 }
-createatom();
-/*Start on html change*/
-var watcher = fs.watch('index.html');
-watcher.on('change', function() {
-    createatom();
-});
+ /*Start on html change*/
+   
+createatom('index.html');

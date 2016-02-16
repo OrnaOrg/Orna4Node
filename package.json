@@ -1,6 +1,6 @@
 {
   "name": "orna4node",
-  "version": "0.9.0",
+  "version": "0.1.0",
   "description": "orna4node is a tool for creation Atomic CSS.",
   "main": "orna4node.js",
   "repository": {

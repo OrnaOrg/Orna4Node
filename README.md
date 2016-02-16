@@ -32,13 +32,19 @@ Atomic CSS classes auto-creator
   -  background or bg
   -  background-color or bgc
   -  border or b (bl,br,bt,bb)
+  -  border-color or b-c (bl-c,br-c,bt-c,bb-c)
+  -  border-style or b-s (bl-s,br-s,bt-s,bb-s)
+  -  border-width or b-w (bl-w,br-w,bt-w,bb-w)
   -  text-align or ta
   -  text-decoration or td
   -  font-family or ff
+  -  font-size or fs
+  -  font-weight or fw
   -  transition-duration or t-dur
   -  transition-delay or t-del
   -  transition-property or t-pro
   -  transition-timing-function or t-fun
+  -  display or d
   -  And other like in CSS but with underscore : = _ **!!!**
 
 Example

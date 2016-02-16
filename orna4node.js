@@ -1,6 +1,6 @@
 /*
  *Orna for Node
- *version: 0.9.0
+ *version: 0.1.0
  *ornaorg.github.io
  */
 
@@ -88,8 +88,42 @@ function createatom(file) {
                     prop = 'border-top';
                 } else if (prop == 'bb') {
                     prop = 'border-bottom';
+                }  else if (prop == 'b-s') {
+                    prop = 'border-style';
+                } else if (prop == 'bl-s') {
+                    prop = 'border-left-style';
+                } else if (prop == 'br-s') {
+                    prop = 'border-right-style';
+                } else if (prop == 'bt-s') {
+                    prop = 'border-top-style';
+                } else if (prop == 'bb-s') {
+                    prop = 'border-bottom-style';
+                } else if (prop == 'b-c') {
+                    prop = 'border-color';
+                } else if (prop == 'bl-c') {
+                    prop = 'border-left-color';
+                } else if (prop == 'br-c') {
+                    prop = 'border-right-color';
+                } else if (prop == 'bt-c') {
+                    prop = 'border-top-color';
+                } else if (prop == 'bb-c') {
+                    prop = 'border-bottom-color';
+                }else if (prop == 'b-w') {
+                    prop = 'border-width';
+                } else if (prop == 'bl-w') {
+                    prop = 'border-left-width';
+                } else if (prop == 'br-w') {
+                    prop = 'border-right-width';
+                } else if (prop == 'bt-w') {
+                    prop = 'border-top-width';
+                } else if (prop == 'bb-w') {
+                    prop = 'border-bottom-width';
                 } else if (prop == 'ta') {
                     prop = 'text-align';
+                }else if (prop == 'fs') {
+                    prop = 'font-size';
+                } else if (prop == 'fw') {
+                    prop = 'font-weight';
                 } else if (prop == 'jc') {
                     prop = 'justify-content';
                 } else if (prop == 'ai') {
@@ -98,6 +132,8 @@ function createatom(file) {
                     prop = 'text-decoration';
                 } else if (prop == 'ff') {
                     prop = 'font-family';
+                } else if (prop == 'd') {
+                    prop = 'display';
                 }
                 if (val[2] !== undefined && val[2].search('@') == -1) {
                     val[2] = val[2].replace(/%/, '\\%');

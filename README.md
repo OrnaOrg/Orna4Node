@@ -64,3 +64,12 @@ More info: [orna4node - NW.js](http://ornaorg.github.io/Orna4Node.html)
 See also: [ornajs](http://ornaorg.github.io);
 
 **Use Orna4Node-CLI with [reload](https://github.com/OrnaOrg/reload) node module. For Browser autoreload! It's recommended!**
+
+**How use it?**
+
+  - Install Node.js 
+  - Download Orna4Node-CLI
+  - Install [reload](https://github.com/OrnaOrg/reload) node module from CMD. Write: (npm install -g reload). 
+  - Start "reload". Write in CMD: reload - -start-page C:\index.html, (use your path). Then: reload - -browser.
+  - Create index.html with [orna4node classes](http://ornaorg.github.io/Orna4Node.html) and put it with Orna4Node file.
+  - Start orna4node.js from CMD. Write: node orna4node.js. But do it from right directory. For directory changes use "cd C:\path". 

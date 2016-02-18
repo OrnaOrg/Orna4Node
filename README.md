@@ -62,3 +62,5 @@ or
 More info: [orna4node - NW.js](http://ornaorg.github.io/Orna4Node.html)
 
 See also: [ornajs](http://ornaorg.github.io);
+
+**Use Orna4Node-CLI with [reload](https://github.com/OrnaOrg/reload) node module. For Browser autoreload! It's recommended!**

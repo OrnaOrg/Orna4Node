@@ -70,6 +70,6 @@ See also: [ornajs](http://ornaorg.github.io);
   - Install Node.js 
   - Download Orna4Node-CLI
   - Install [reload](https://github.com/OrnaOrg/reload) node module from CMD. Write: (npm install -g reload). 
-  - Start "reload". Write in CMD: reload --browser.
+  - Start "reload". Write in CMD: reload --browser. But do it from right directory. For directory changes use "cd C:\path". Path where the index.html is.
   - Create index.html with [orna4node classes](http://ornaorg.github.io/Orna4Node.html) and put it with Orna4Node file.
   - Start orna4node.js from CMD. Write: node orna4node.js. But do it from right directory. For directory changes use "cd C:\path". 

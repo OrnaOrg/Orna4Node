@@ -1,6 +1,6 @@
 /*
  *Orna for Node
- *version: 1.3.0
+ *version: 1.3.5
  *ornaorg.github.io
  */
     var fs = require('fs');
@@ -29,7 +29,6 @@ function createatom(file) {
                 val[1] = val[1].replace(/\)/g, '\\)');
                 val[1] = val[1].replace(/\./g, '\\.');
                 var dblval = val[1].replace(/\\/g, '');
-                dblval = val[1].replace(/\\/g, '');
                 var prop = val[0];
                 if (prop == 't-dur') {
                     prop = 'transition-duration';

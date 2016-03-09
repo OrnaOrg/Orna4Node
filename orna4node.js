@@ -1,6 +1,6 @@
 /*
  *Orna for Node
- *version: 1.1.5
+ *version: 1.3.0
  *ornaorg.github.io
  */
     var fs = require('fs');
@@ -21,13 +21,13 @@ function createatom(file) {
             var csstext = fs.readFileSync(cssname, 'utf-8');
             console.log(csstext);
             var isclass = csstext.search(classes[i]);
-            if (isclass == -1) {
+            if (isclass == -1 && val !== undefined) {
                 console.log(isclass);
-                val[1] = val[1].replace(/%/, '\\%');
-                val[1] = val[1].replace(/#/, '\\#');
-                val[1] = val[1].replace(/\(/, '\\(');
-                val[1] = val[1].replace(/\)/, '\\)');
-                val[1] = val[1].replace(/\./, '\\.');
+                val[1] = val[1].replace(/%/g, '\\%');
+                val[1] = val[1].replace(/#/g, '\\#');
+                val[1] = val[1].replace(/\(/g, '\\(');
+                val[1] = val[1].replace(/\)/g, '\\)');
+                val[1] = val[1].replace(/\./g, '\\.');
                 var dblval = val[1].replace(/\\/g, '');
                 dblval = val[1].replace(/\\/g, '');
                 var prop = val[0];
@@ -135,15 +135,15 @@ function createatom(file) {
                     prop = 'display';
                 }
                 if (val[2] !== undefined && val[2].search('@') == -1) {
-                    val[2] = val[2].replace(/%/, '\\%');
-                    val[2] = val[2].replace(/#/, '\\#');
-                    val[2] = val[2].replace(/\./, '\\.');
+                    val[2] = val[2].replace(/%/g, '\\%');
+                    val[2] = val[2].replace(/#/g, '\\#');
+                    val[2] = val[2].replace(/\./g, '\\.');
                     var id = val[2];
-                    id = val[2].replace(/\\/, '');
+                    id = val[2].replace(/\\/g, '');
                 } else if (val[2] !== undefined && val[2].search('@') !== -1) {
-                    val[2] = val[2].replace(/@/, '\\@');
+                    val[2] = val[2].replace(/@/g, '\\@');
                     var device = 'all';
-                    var querywidth = val[2].replace(/\\@/, '');
+                    var querywidth = val[2].replace(/\\@/g, '');
                 }
                 if (val[1] !== undefined & val[2] === undefined) {
                     fs.appendFileSync(cssname, '.' + val[0] + '_' + val[1] + '{' + prop + ':' + dblval + ';}\n');
